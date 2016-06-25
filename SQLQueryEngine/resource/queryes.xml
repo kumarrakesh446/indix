@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+
+	<query id="SELECT * FROM products WHERE store=?">
+		<parameters>
+			<parameter name="store" type="NUMBER" />
+		</parameters>
+
+	</query>
+	<query id="SELECT brand FROM products WHERE price > ?">
+		<parameters>
+			<parameter name="price" type="NUMBER" />
+		</parameters>
+
+	</query>
+
+	<query id="SELECT MAX(price) FROM products ">
+	
+	</query>
+<!-- 	<query id="SELECT * FROM products WHERE title like '%'||?||'%' ">
+		<parameters>
+			<parameter name="title" type="STRING" />
+		</parameters>
+	</query> -->
+	<query id="SELECT UNIQ(store) FROM products WHERE in_stock=false">
+	</query>
+
+	<query id="SELECT title FROM products WHERE in_stock=false AND brand=?  ">
+		<parameters>
+			<parameter name="brand" type="NUMBER" />
+		</parameters>
+
+	</query>
+
+	<query
+		id="SELECT title FROM products WHERE in_stock=? AND ( brand=? OR store=? )  ">
+		<parameters>
+			<parameter name="in_stock" type="BOOLEAN" />
+			<parameter name="brand" type="NUMBER" />
+			<parameter name="store" type="NUMBER" />
+		</parameters>
+
+	</query>
+
+
+</queries>
